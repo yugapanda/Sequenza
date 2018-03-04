@@ -1,3 +1,5 @@
+package models
+
 case class Note(pitch: Int, velocity: Int, duration: Int) {
 
   /**
@@ -5,6 +7,13 @@ case class Note(pitch: Int, velocity: Int, duration: Int) {
     * @return pitch name like: "C#"
     */
   def getPitchName:String = Note.pitchName(pitch % 12)
+
+
+  /**
+    * return pitch octave
+    * @return octave like : 6
+    */
+  def getOctave:Int = (pitch / 12) + 1
 
 
 }
